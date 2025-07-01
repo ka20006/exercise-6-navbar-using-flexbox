@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
      <script src="https://kit.fontawesome.com/72f0e7f3c9.js" crossorigin="anonymous"></script>
+  <script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
 
     <style>
         *{
@@ -13,6 +21,7 @@
         }
         html body{
             font-family: 'Segoe UI';
+            
 
         }
    .header{
@@ -56,6 +65,10 @@
     padding-right: 22px;
     font-size: 24px;
    }
+        .menu-toggle {
+  display: none;
+}
+
    .button{
     margin-left: 100px;
     margin-top: 70px;
@@ -70,6 +83,30 @@
     font-weight: bold;
     font-size: 14px;
    }
+        @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+  }
+}
+
    .icons{
     font-size: 33px;
     display: flex;
@@ -89,6 +126,7 @@
         margin-top: 50px;
         display: flex;
     }
+        
     .icon i{
         font-size: 25px;
         margin-top: 15px;
@@ -151,6 +189,8 @@
                 <li>our company</li>
             </ul>
         </div>
+         <div class="menu-toggle">&#9776;</div>
+
         <div class="button">
             <button>Buy Now</button>
         </div>
